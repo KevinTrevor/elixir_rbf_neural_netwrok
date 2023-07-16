@@ -23,3 +23,4 @@ Una vez tenemos todo organizado, podemos empezar a ejecutar el proyecto siguiend
 1. Ejecutar el comando **elixirc radial.ex** estando en la raíz del proyecto.
 2. Ejecutar el comando **iex**.
 3. Una vez dentro del Shell de Elixir, podemos llamar al módulo NetworkApplication; en específico a su método run(), de la siguiente forma: **NetworkApplication.run()**
+4. Tras ejecutar exitosamente, obtendrás una respuesta **:ok** y se generará un archivo **output.csv** en la carpeta raíz, donde se encontrarán las respuesta de la red neuronal en base a los datos de entrada del archivo **inputs.csv**
