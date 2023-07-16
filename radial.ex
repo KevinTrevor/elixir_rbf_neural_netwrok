@@ -155,19 +155,19 @@ defmodule Parser do
     Función que exporta los datos de una red neuronal en dos archivos diferentes
   """
   def export(network) do
-    write("base/hidden.csv", network, "hidden")
-    write("base/output.csv", network, "output")
+    write("base/hidden_layer.csv", network, "hidden")
+    write("base/output_layer.csv", network, "output")
   end
 
   @doc """
     Función que importa los datos de una red neuronal que se encuentran en dos archivos diferentes
   """
   def import() do
-    radial_neurons = parse_file("base/hidden.csv", "float") |> Enum.map(fn hidden -> %RadialNeuron{
+    radial_neurons = parse_file("base/hidden_layer.csv", "float") |> Enum.map(fn hidden -> %RadialNeuron{
       centroid: Enum.slice(hidden, 0..(length(hidden) - 2)),
       desviation: Enum.at(hidden, length(hidden) - 1)}
     end)
-    output_neurons = parse_file("base/output.csv", "float") |> Enum.map(fn output -> %OutputNeuron{
+    output_neurons = parse_file("base/output_layer.csv", "float") |> Enum.map(fn output -> %OutputNeuron{
       weights: Enum.slice(output, 0..(length(output) - 2)),
       bias: Enum.at(output, length(output) - 1)}
     end)
